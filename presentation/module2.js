@@ -40,18 +40,7 @@ import {
 } from './UI/elements';
 import ReactPlayer from 'react-player';
 
-// import preloader from '../src/utils/preloader';
-
-// const images = {
-//   city: require('../assets/city.jpg'),
-//   kat: require('../assets/kat.png'),
-//   logo: require('../assets/formidable-logo.svg'),
-//   markdown: require('../assets/markdown.png'),
-// };
-
-import city from '../assets/city.jpg';
-
-// preloader(images);
+import cap_theorem from '../assets/cap_theorem.jpg';
 
 import { MainSlide } from './Slides/mainSlide';
 
@@ -381,7 +370,133 @@ export default class Module2 extends React.Component {
         </Slide>
 
         <Slide transition={['slide']} bgColor="bg">
-          <img src={city} style={{ maxWidth: '100%' }} />
+          <img src={cap_theorem} style={{ maxWidth: '100%' }} />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg">
+          <TitleSlide
+            title="CAP Theorem"
+            content="In theoretical computer science, the CAP theorem, also named Brewer's theorem after computer scientist Eric Brewer, states that it is impossible for a distributed data store to simultaneously provide more than two out of the following three guarantees the following..."
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg">
+          <TitleSlide
+            title="Consistency"
+            content="Every read receives the most recent write or an error."
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg">
+          <TitleSlide
+            title="Availability"
+            content="Every request receives a (non-error) response – without a guarantee that it contains the most recent write."
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg">
+          <TitleSlide
+            title="Partition Tolerance"
+            content="The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes."
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg-alt">
+          <TitleSlide
+            title="Journal Reflection!"
+            content="Think about the data management problem for your organization.  What are your thoughts on the processing needs?  Think about the CAP theorem constraints.  Which do you absolutely need to have?  Which can you ignore?"
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg-alt">
+          <TitleSlide
+            title="Let's investigate"
+            content={
+              <div>
+                <T6 textColor="secondary">
+                  Take a look at the following link for 5 minutes. Try to think
+                  of how Google has accomplished to go against the CAP theorem.
+                  <br />
+                  <br />
+                  <a href="https://cloud.google.com/spanner/" target="_blank">
+                    Link
+                  </a>
+                </T6>
+              </div>
+            }
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg">
+          <TitleSlide
+            title="Societal Constraints"
+            content="It's not just the technology that limits what we can and can't answer.  We also need to consider constraints that society has created, both legal and moral.  Just because we have the data and the technology doesn't mean we can or should do things that are harmful to people or groups."
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg">
+          <ListSlide
+            content={[
+              'Data Generation: Who owns the data?  Can someone generate malicious or harmful data?',
+              'Data Collection: Do we have the right to collect the data?  Are our collection techniques an intrusion on privacy?  Are our collection techniques and intrusion on privacy?',
+              'Data Transmission: Should confidential or sensitive information be digitized and transmitted?  What are the consequences if a third party intercepts the data?',
+              'Data Preprocessing: Are we biasing our data through cleaning?  Does the combination of data from multiple sources reveal more about a person than they would want revealed?',
+              'Data Storage: What are the consequences if two differing versions of the same data are released?  What happens if the data is temporarily unavailable?  What is the impact if data is lost?',
+              'Data Analysis: Do our algorithms introduce unintended bias?  Will our output be used in a way that could adversely affect someone else?',
+            ]}
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg">
+          <TitleSlide
+            title="Assignment 1"
+            content="In this assignment, you will create a Data Collection and Management Map.  This is a high level view of your entire data pipeline.  Throughout the course you will be referring to this Map as you drill down into specific areas."
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg">
+          <Video url="https://www.youtube.com/watch?v=uUhPzBR1qzI" />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg-alt">
+          <TitleSlide
+            title="Discussion Board - Graded Activity"
+            content="Pick an application of your choosing.  For that application think about the data that would need to be collected.  What security and privacy concerns might you have for the data?  What safeguards might you take to ensure that the data is not misused? This is due by the end of next week!"
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg-alt">
+          <TitleSlide
+            title="Journal Reflection"
+            content="Think about the organization that you chose at the beginning and answer the question:
+            Which technological issues might be a challenge for your problem?
+            "
+          />
+        </Slide>
+
+        <Slide transition={['slide']} bgColor="bg">
+          <TitleSlide
+            title="Summary"
+            content={
+              <div>
+                <T6 textColor="secondary">
+                  This module introduced the Data Value Chain and discussed many
+                  of the technical and ethical issues to address in each step.
+                  Sometimes balancing the two comes down to making business
+                  trade-offs; sometimes there are more fundamental limitations.
+                  A key first step in Data Management is defining the technical
+                  and societal concerns upfront, then explore ways to achieve a
+                  balance. <br />
+                  <br />
+                  In the following modules, we will look at concrete solutions
+                  to many of the questions raised in this module. The next
+                  module will look at the history of data collection and
+                  management: what problems have been encountered in the past
+                  and how have they been dealt with.
+                </T6>
+              </div>
+            }
+          />
         </Slide>
       </Deck>
     );
