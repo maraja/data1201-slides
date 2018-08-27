@@ -19,24 +19,38 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         exclude: /(node_modules)/,
-      },{
-        test: /\.mdx$/,
-        ignore: /node_modules/,
-        use: [
-          'babel-loader',
-          'mdx-deck/loader'
-        ]
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: commonPaths.imagesFolder,
-            },
-          },
-        ],
+        test: /\.mdx$/,
+        ignore: /node_modules/,
+        use: ['babel-loader', 'mdx-deck/loader'],
+      },
+      {
+        test: /\.svg$/,
+        include: path.join(__dirname, '..', 'assets'),
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          context: '',
+        },
+      },
+      {
+        test: /\.png$/,
+        include: path.join(__dirname, '..', 'assets'),
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          context: '',
+        },
+      },
+      {
+        test: /\.jpg$/,
+        include: path.join(__dirname, '..', 'assets'),
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          context: '',
+        },
       },
       {
         test: /\.(woff2|ttf|woff|eot)$/,

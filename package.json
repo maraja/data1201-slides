@@ -10,7 +10,7 @@
     "deploy": "npm run clean & npm run build && surge -p .",
     "export": "spectacle-renderer --delay 3000",
     "start": "cross-env NODE_ENV=production node server.js",
-    "start:dev": "cross-env NODE_ENV=development node server.js"
+    "dev": "cross-env NODE_ENV=development node server.js"
   },
   "author": "",
   "license": "MIT",
