@@ -1,0 +1,9 @@
+before_script:
+  - npm run build
+deploy:
+  provider: heroku
+  api_key:
+    secure: d4cf74c4-5551-4f74-97c9-69bba4c31c68
+  app: afternoon-shelf-96869
+  on:
+    repo: maraja/data1201-slides
